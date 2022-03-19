@@ -1,11 +1,12 @@
 const { Client, Intents, DiscordAPIError } = require('discord.js');
+require('dotenv').config();
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
 //Discord login 
 
 
 const activities_list = [
     "Minecraft Version 1.16.5", 
-    "IP =",
+    "IP =", //Enter your mcserver ip
     "!help|MCServer = Online" 
     ]; // creates an arraylist.
 
@@ -29,4 +30,4 @@ client.on("messageCreate", (message) => {
 
 
 
-client.login('');
+client.login(process.env.DISCORD_TOKEN);
